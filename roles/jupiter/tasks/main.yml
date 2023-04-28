@@ -5,5 +5,14 @@
   template:
     src: docker-compose.yml.j2
     dest: docker-compose.yml
+    
+- name: Create docker compose file
+  become: true
+  become_user: root
+  template:
+    src: run-docker-compose.sh.j2
+    dest: run-docker-compose.sh
 
+- name: Execute docker compose file
+  command: bash run-docker-compose.sh
 
