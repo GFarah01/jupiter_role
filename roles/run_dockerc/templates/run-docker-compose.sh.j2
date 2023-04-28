@@ -1,0 +1,13 @@
+{% if code_force_recreate is defined and code_force_recreate %}
+RECREATE_OPT="--force-recreate"
+{% else %}
+RECREATE_OPT=""
+{% endif %}
+
+{% if code_force_rebuild is defined and code_force_rebuild %}
+REBUILD_OPT="--build"
+{% else %}
+REBUILD_OPT=""
+{% endif %}
+
+docker-compose up ${REBUILD_OPT} ${RECREATE_OPT}

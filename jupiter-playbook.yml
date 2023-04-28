@@ -1,0 +1,11 @@
+
+- name: Deploy jupiter image
+  hosts: localhost
+  tasks:
+    - include_role:
+        name: jupiter
+    - include_role:
+        name: run_dockerc
+
+        
+  

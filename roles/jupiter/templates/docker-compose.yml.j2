@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  comwork_jupiter_env:
+    restart: always
+    image: jupyter/datascience-notebook:{{ jupiter_tag }}
+    ports:
+      - "{{ host_port}}:{{ docker_port }}"

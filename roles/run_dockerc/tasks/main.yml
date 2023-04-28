@@ -1,0 +1,13 @@
+- name: Create docker compose file
+  become: true
+  become_user: root
+  template:
+    src: run-docker-compose.sh.j2
+    dest: run-docker-compose.sh
+
+- name: Execute docker compose file
+  command: bash /home/comwork/projet-comwork-cloud/ansible-projects/jupiter-ansible/run-docker-compose.sh
+
+# - name: Execute docker compose file
+#   command: docker-compose up
+

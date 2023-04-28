@@ -1,0 +1,9 @@
+
+---
+- name: Generate Docker Compose file
+  become: true
+  template:
+    src: docker-compose.yml.j2
+    dest: docker-compose.yml
+
+
